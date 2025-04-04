@@ -15,7 +15,7 @@ router.get('/exams', (req, res) => {
     { id: 4, name: 'Alice Brown', email: 'alice@example.com' },
     { id: 5, name: 'Charlie Davis', email: 'charlie@example.com' }
   ];
-  
+
   // POST /exam-group/exams route - adds a new exam to the array
 router.post('/exams', (req, res) => {
   const { id, name, date } = req.body;
@@ -27,9 +27,8 @@ router.post('/exams', (req, res) => {
   }
 });
 
+
   res.json(users);
 });
-
-
 
 module.exports = router; 
