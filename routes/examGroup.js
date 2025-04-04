@@ -16,6 +16,18 @@ router.get('/exams', (req, res) => {
     { id: 5, name: 'Charlie Davis', email: 'charlie@example.com' }
   ];
 
+  // POST /exam-group/exams route - adds a new exam to the array
+router.post('/exams', (req, res) => {
+  const { id, name, date } = req.body;
+  if (id && name && date) {
+    exams.push({ id, name, date });
+    res.status(201).json({ message: 'Exam added successfully!', exam: { id, name, date } });
+  } else {
+    res.status(400).json({ message: 'Invalid exam data. Please include id, name, and date.' });
+  }
+});
+
+
   res.json(users);
 });
 
